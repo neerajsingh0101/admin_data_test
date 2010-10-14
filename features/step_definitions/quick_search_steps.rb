@@ -8,11 +8,12 @@ end
 
 Then /^first id of table should be the (.*) record of the table$/ do |position|
   page.should have_css("#view_table tr td a")
-  if position == 'last'
+  case position
+  when 'last'
     assert_equal User.last.id.to_s, page.find("#view_table tr td a").text
-  elsif position == 'second'
+  when 'second'
     assert_equal User.find(:all, :limit =>2)[1].id.to_s, page.find("#view_table tr td a").text
-  elsif position == 'first'
+  when 'first'
     assert_equal User.first.id.to_s, page.find("#view_table tr td a").text
   end
 end
