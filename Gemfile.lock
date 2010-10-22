@@ -42,7 +42,7 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
-    admin_data (1.0.14)
+    admin_data (1.0.15)
       will_paginate (>= 3.0.pre2)
     arel (1.0.1)
       activesupport (~> 3.0.0)
@@ -159,7 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  admin_data (>= 1.0.14)
+  admin_data (>= 1.0.15)
   capistrano
   capybara
   cucumber-rails (>= 0.3.2)
