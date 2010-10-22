@@ -6,5 +6,7 @@ When /^I visit (.*) page$/ do |target_page|
     visit '/admin_data/quick_search/user'
   when 'user show'
     visit "/admin_data/klass/user/#{User.last.id}"
+  when 'user feed'
+    visit "/admin_data/feed/user"
   end
 end
