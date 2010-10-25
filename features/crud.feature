@@ -3,7 +3,7 @@ Feature: CRUD
   Scenario: show
     Given a user exists
     Given I visit user show page
-    Then I should see "User ID"
+    Then I should notice id of the last person
     Then I should see "Edit"
     Then I should see "Delete"
     Then I should see "Destroy"
@@ -24,7 +24,7 @@ Feature: CRUD
     Then I should see "website"
     Then I should see "phone_numbers(2)"
     When I follow "website"
-    Then I should see "Website ID"
+    Then I should notice id of website of the last person
     When I follow "user"
     When I follow "phone_numbers(2)"
     Then I should see "has 2 phone_numbers"

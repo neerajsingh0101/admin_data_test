@@ -22,3 +22,13 @@ Then /^I should find value "(.*)" for "(.*)"$/ do |text, column|
   assert_match text, page.find(:xpath, "//form//div[@class='data'][#{index}]").text
 end
 
+Then /^I should notice id of the last person$/ do
+  u = User.last
+  page.should have_content("ID #{u.id}")
+end
+
+Then /^I should notice id of website of the last person$/ do
+  u = User.last
+  website = User.last.website
+  page.should have_content("ID #{website.id}")
+end

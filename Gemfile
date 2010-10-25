@@ -11,9 +11,10 @@ gem 'capistrano'
 
 gem 'faker'
 
-gem 'admin_data', '>=1.0.15'
+
+#gem 'admin_data', '>=1.0.15'
 #gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git', :branch => 'rails3_gem'
-#gem 'admin_data', :path => '/Users/nsingh/dev/admin_data'
+gem 'admin_data', :path => '/Users/nsingh/dev/admin_data'
 
 group :development, :test do
   gem 'factory_girl_rails', :git => 'git://github.com/thoughtbot/factory_girl_rails'
