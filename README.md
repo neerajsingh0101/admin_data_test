@@ -3,4 +3,7 @@
 # How do I run test?
 * mv Gemfile2 Gemfile
 * bundle install
+* rake db:create
+* rake db:migrate
+* rake db:test:prepare
 * bundle exec cucumber
