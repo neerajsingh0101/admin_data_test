@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/neerajdotname/admin_data.git
+  revision: 0a02fa83ba50f3bfb94d67385a1d0fd7aed015c9
+  branch: rails3_gem
+  specs:
+    admin_data (1.0.16)
+      will_paginate (>= 3.0.pre2)
+
+GIT
   remote: git://github.com/thoughtbot/factory_girl
   revision: 7c649b2c85ecc05ee74a1b869a2b5d3a626d59be
   specs:
@@ -11,12 +19,6 @@ GIT
     factory_girl_rails (1.0)
       factory_girl (~> 1.3)
       rails (>= 3.0.0.beta4)
-
-PATH
-  remote: /Users/nsingh/dev/admin_data
-  specs:
-    admin_data (1.0.16)
-      will_paginate (>= 3.0.pre2)
 
 GEM
   remote: http://rubygems.org/
