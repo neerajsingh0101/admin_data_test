@@ -7,3 +7,4 @@ capybara*.html
 .rspec
 .rvmrc
 Gemfile.lock
+Gemfile
