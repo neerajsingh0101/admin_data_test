@@ -1,17 +1,21 @@
 Then /^footer should have link "(.*)" linking to "(.*)"$/ do |text, url|
-  assert_match text, page.find(:xpath, "//div[@id='footer']//a[@href='#{url}']").text
+  page.find(:xpath, "//div[@id='footer']//a[@href='#{url}']").text.should == text
 end
 
-Then /^I should see page with proper dropdown values$/ do 
+Then /^I should see page with proper dropdown values$/ do
   selects =  page.find(:xpath, "//select[@class='drop_down_value_klass']")
   assert selects
 
-  assert_equal 'phone_number', selects.find(:xpath, './option[2]').text
-  assert_equal 'user', selects.find(:xpath, './option[3]').text
-  assert_equal 'website', selects.find(:xpath, './option[4]').text
+  selects.find(:xpath, './option[2]').text.should == 'phone_number'
+
+  selects.find(:xpath, './option[3]').text.should == 'user'
+
+  selects.find(:xpath, './option[4]').text.should == 'website'
 
   url = 'http://localhost:9887/admin_data/quick_search/'
-  assert_equal url+'phone_number', selects.find(:xpath, './option[2]').value
-  assert_equal url+'user', selects.find(:xpath, './option[3]').value
-  assert_equal url+'website', selects.find(:xpath, './option[4]').value
+  selects.find(:xpath, './option[2]').value.should == url+'phone_number'
+
+  selects.find(:xpath, './option[3]').value.should == url+'user'
+  
+  selects.find(:xpath, './option[4]').value.should == url+'website' 
 end
