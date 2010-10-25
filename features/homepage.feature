@@ -16,6 +16,6 @@ Feature: homepage
 
   Scenario: footer links
     Given I visit admin_data page
-    Then footer should have link with text "admin_data" and url "http://github.com/neerajdotname/admin_data"
-    Then footer should have link with text "Report Bug" and url "http://github.com/neerajdotname/admin_data/issues"
-    Then footer should have link with text "Documentation" and url "http://github.com/neerajdotname/admin_data/wiki"
+    Then page should have link with text "admin_data" within "#footer" and url "http://github.com/neerajdotname/admin_data"
+    Then page should have link with text "Report Bug" within "#footer" and url "http://github.com/neerajdotname/admin_data/issues"
+    Then page should have link with text "Documentation" within "#footer" and url "http://github.com/neerajdotname/admin_data/wiki"

@@ -1,5 +1,6 @@
-Then /^footer should have link with text "(.*)" and url "(.*)"$/ do |text, url|
-  page.find(:xpath, "//div[@id='footer']//a[@href='#{url}']").text.should == text
+Then /^page should have link with text "(.*)" within "(.*)" and url "(.*)"$/ do |text, css_selector, url|
+  tmp = css_selector[1..-1]
+  page.find(:xpath, "//div[@id='#{tmp}']//a[@href='#{url}']").text.should == text
 end
 
 Then /^I should see page with proper dropdown values$/ do
