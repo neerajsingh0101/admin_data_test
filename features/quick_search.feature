@@ -11,7 +11,6 @@ Feature: quick search
     Then first id of table should be of "Trisha"
     Then I should see "Next →" 
     Then I follow "Next →" 
-    Then show me the page
     Then first id of table should be of "John"
     When I select "id asc" from "sortby"
     When I press "Search"
