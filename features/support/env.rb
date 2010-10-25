@@ -65,3 +65,4 @@ require 'factory_girl/step_definitions'
 require 'shoulda'
 
 #Capybara.default_wait_time = 20 
+Capybara.save_and_open_page_path = 'tmp'
