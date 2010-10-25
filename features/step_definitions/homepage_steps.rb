@@ -13,10 +13,10 @@ Then /^I should see page with proper dropdown values$/ do
 
   selects.find(:xpath, './option[4]').text.should == 'website'
 
-  url = 'http://localhost:9887/admin_data/quick_search/'
-  selects.find(:xpath, './option[2]').value.should == url+'phone_number'
+  url = '/admin_data/quick_search/'
+  selects.find(:xpath, './option[2]').value.should match Regexp.new(url+'phone_number')
 
-  selects.find(:xpath, './option[3]').value.should == url+'user'
+  selects.find(:xpath, './option[3]').value.should match Regexp.new(url+'user')
   
-  selects.find(:xpath, './option[4]').value.should == url+'website' 
+  selects.find(:xpath, './option[4]').value.should match Regexp.new(url+'website')
 end

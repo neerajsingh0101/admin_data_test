@@ -19,7 +19,7 @@ group :development, :test do
   gem 'shoulda'
   gem "rspec-rails", ">= 2.0.0.beta.22"
   gem "cucumber-rails", ">= 0.3.2"
-  gem "capybara", "= 0.3.9"
+  gem "capybara", "= 0.4.0"
   gem "launchy"
 end
 
