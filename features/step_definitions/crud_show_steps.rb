@@ -33,9 +33,6 @@ end
 
 Then /^I should find value "(.*)" for "(.*)"$/ do |text, column|
   index = (column == 'created_at') ? 9 : 10
-  # TODO convert to should. If I do that right now I get following failure
-  #expected: "(auto)",
-  #   got: "\n    (auto)\n  " (using ==)
   page.find(:xpath, "//form//div[@class='data'][#{index}]").text.should match Regexp.new(text)
 end
 

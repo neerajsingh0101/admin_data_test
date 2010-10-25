@@ -77,8 +77,12 @@ Feature: Advance Search
     Then page should have disabled css "#advance_search_table tr td input.col3"
     When I select "on" from "adv_search[1_row][col2]"
     Then page should have css "#advance_search_table tr td input.col3"
+    Then pending page should have text as current date for "#advance_search_table tr td input.col3" 
     When I select "on or before" from "adv_search[1_row][col2]"
     Then page should have css "#advance_search_table tr td input.col3"
+    Then pending page should have text as current date for "#advance_search_table tr td input.col3" 
     When I select "on or after" from "adv_search[1_row][col2]"
     Then page should have css "#advance_search_table tr td input.col3"
+    Then pending page should have text as current date for "#advance_search_table tr td input.col3" 
+
 
