@@ -1,18 +1,21 @@
 Feature: quick search
 
   Scenario: quick search with no search term
-    Given a user exists
-    Given a user exists
-    Given a user exists
-    Given a user exists
+    Given the following user exists:
+      | first_name | last_name |
+      | Mary       | Jane      |
+      | John       | Smith     |
+      | Neil       | Singh     |
+      | Trisha     | Singh     |
     Given I visit quick_search page
-    Then first id of table should be the last record of the table
+    Then first id of table should be of "Trisha"
     Then I should see "Next →" 
     Then I follow "Next →" 
-    Then first id of table should be the second record of the table
+    Then show me the page
+    Then first id of table should be of "John"
     When I select "id asc" from "sortby"
     When I press "Search"
-    Then first id of table should be the first record of the table
+    Then first id of table should be of "Mary"
 
   Scenario: quick search with search term
     Given the following user exists:
@@ -23,7 +26,7 @@ Feature: quick search
     When I fill in "quick_search_input" with "John"
     When I press "Search"
     Then I should see "Search result: 1 record found"
-    Then verify that use is John Smith
+    Then verify that user is John Smith
 
   Scenario: table structure
     Given I visit quick_search page
@@ -41,4 +44,3 @@ Feature: quick search
      | born_at     | datetime | true  |         | 
      | created_at  | datetime | true  |         | 
      | updated_at  | datetime | true  |         | 
-  
