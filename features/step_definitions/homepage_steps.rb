@@ -1,4 +1,4 @@
-Then /^footer should have link "(.*)" linking to "(.*)"$/ do |text, url|
+Then /^footer should have link with text "(.*)" and url "(.*)"$/ do |text, url|
   page.find(:xpath, "//div[@id='footer']//a[@href='#{url}']").text.should == text
 end
 
