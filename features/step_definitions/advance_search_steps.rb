@@ -1,5 +1,7 @@
 Then /^page should have text as current date for "(.*)"$/ do |css_selector|
-  page.should have_content('25-October-2010')
-  # TODO this is not working
-  #page.find(css_selector).text.should == 'today'
+  wait_until { page.evaluate_script("jQuery.active === 0") }
+
+  t = Time.now.strftime('%d-%B-%Y')
+  page.should have_content(t)
+  page.find(css_selector).value.should == t
 end
