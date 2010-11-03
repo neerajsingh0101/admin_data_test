@@ -1,6 +1,22 @@
 Feature: Advance Search for string
 
   @javascript
+  Scenario: Advance Search for a text field
+    Given a user exists
+    Given I visit advance_search page
+    When I select "description" from "adv_search[1_row][col1]"
+    Then page should have css "#advance_search_table tr td select.col2"
+    When I select "Contains" from "adv_search[1_row][col2]"
+    Then page should have css "#advance_search_table tr td input.col3"
+    When I select "Doesn't Contain" from "adv_search[1_row][col2]"
+    Then page should have css "#advance_search_table tr td input.col3"
+    When I select "is null" from "adv_search[1_row][col2]"
+    #Then page should have disabled css "#advance_search_table tr td input.col3"
+    When I select "is not null" from "adv_search[1_row][col2]"
+    #Then page should have disabled css "#advance_search_table tr td input.col3"
+
+
+  @javascript
   Scenario: testing drop down behavior 
     Given a user exists
     Given I visit advance_search page
@@ -21,7 +37,7 @@ Feature: Advance Search for string
     #Then page should have disabled css "#advance_search_table tr td input.col3"
     
   @javascript
-  Scenario: for is not null
+  Scenario: option "is not null"
     Given the following user exists:
       | first name | last name |
       | Mary       | Jane      |
@@ -35,7 +51,7 @@ Feature: Advance Search for string
     Then async verify that user "last_name" is "Jane"
 
   @javascript
-  Scenario: for is null
+  Scenario: option "is null"
     Given the following user exists:
       | first name | last name |
       | Mary       | Jane      |
@@ -49,7 +65,7 @@ Feature: Advance Search for string
     Then async verify that user "first_name" is "John"
 
   @javascript
-  Scenario: for is exactly
+  Scenario: option "is exactly"
     Given the following user exists:
       | first name | last name |
       | Mary       | Jane      |
@@ -65,7 +81,7 @@ Feature: Advance Search for string
     Then async verify that user "last_name" is "Smith"
 
   @javascript
-  Scenario: for contains
+  Scenario: option "contains"
     Given the following user exists:
       | first name | last name |
       | Mary       | Jane      |
@@ -97,7 +113,7 @@ Feature: Advance Search for string
     Then I should see "Search result: 0 records found"
 
   @javascript
-  Scenario: for contains
+  Scenario: option "does not contain"
     Given the following user exists:
       | first name | last name |
       | Mary       | Jane      |
@@ -112,4 +128,3 @@ Feature: Advance Search for string
     Then I should see "Search result: 2 records found"
     Then async verify that user "first_name" is "John"
     Then async verify that user "last_name" is "Smith"
-
