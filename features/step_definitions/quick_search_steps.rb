@@ -1,10 +1,19 @@
-Then /^verify that user is John Smith$/ do
-  selects =  page.find(:xpath, "//table[@id='view_table']")
-  selects.should be_true
+Then /^(.*)verify that user "(.*)" is "(.*)"$/ do |async, attribute, input|
+  wait_until { page.evaluate_script("jQuery.active === 0") } unless async.blank?
 
-  selects.find(:xpath, './tr/td[2]').text.should match Regexp.new('John')
-  selects.find(:xpath, './tr/td[3]').text.should match Regexp.new('Smith')
+  table =  page.find(:xpath, "//table[@id='view_table']")
+  table.should be_true
+
+  counter = attribute == 'first_name' ? 2 : 3
+
+  if async.blank?
+    table.find(:xpath, "./tr/td[#{counter}]").text.should match Regexp.new(input)
+  else
+    table.find(:xpath, "./tbody/tr/td[#{counter}]").text.should match Regexp.new(input)
+  end
 end
+
+
 
 Then /^I should see following tabular attributes:$/ do |expected_cukes_table|
   expected_cukes_table.diff!(tableish('table.table tr', 'td,th'))

@@ -25,7 +25,8 @@ Feature: quick search
     When I fill in "quick_search_input" with "John"
     When I press "Search"
     Then I should see "Search result: 1 record found"
-    Then verify that user is John Smith
+    Then verify that user "first_name" is "John"
+    Then verify that user "last_name" is "Smith"
 
   Scenario: table structure
     Given I visit quick_search page
