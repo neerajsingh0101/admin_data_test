@@ -6,8 +6,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'ruby-debug'
 
-gem 'capistrano'
-
 gem 'faker'
 
 gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git', :branch => 'rails3_gem'
