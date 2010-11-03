@@ -18,18 +18,6 @@ Feature: Advance Search has a number of dropdown fields where the values in one 
     #Then page should have disabled css "#advance_search_table tr td input.col3"
 
 
-  @javascript
-  Scenario: Advance Search for an integer
-    Given a user exists
-    Given I visit advance_search page
-    When I select "age" from "adv_search[1_row][col1]"
-    Then page should have css "#advance_search_table tr td select.col2"
-    When I select "is equal to" from "adv_search[1_row][col2]"
-    Then page should have css "#advance_search_table tr td input.col3"
-    When I select "is less than" from "adv_search[1_row][col2]"
-    Then page should have css "#advance_search_table tr td input.col3"
-    When I select "is greater than" from "adv_search[1_row][col2]"
-    Then page should have css "#advance_search_table tr td input.col3"
 
   @javascript
   Scenario: Advance Search for a boolean

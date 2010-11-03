@@ -28,7 +28,6 @@ Feature: Advance Search for string
       | John       |           |
     Given I visit advance_search page
     When I select "last_name" from "adv_search[1_row][col1]"
-    Then show me the page
     When I select "is not null" from "adv_search[1_row][col2]"
     When I press "Search"
     Then I should see "Search result: 1 record found"
