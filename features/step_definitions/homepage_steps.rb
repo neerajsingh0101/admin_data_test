@@ -5,7 +5,7 @@ end
 
 Then /^I should see page with proper dropdown values$/ do
   selects =  page.find(:xpath, "//select[@class='drop_down_value_klass']")
-  assert selects
+  selects.should be_true
 
   selects.find(:xpath, './option[2]').text.should == 'phone_number'
 

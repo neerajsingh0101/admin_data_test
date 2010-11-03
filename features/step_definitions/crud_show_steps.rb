@@ -23,12 +23,9 @@ Then /^I should find value "(.*)" for "(.*)"$/ do |text, column|
 end
 
 Then /^I should notice id of the last person$/ do
-  u = User.last
-  page.should have_content("ID #{u.id}")
+  page.should have_content("ID #{User.last.id}")
 end
 
 Then /^I should notice id of website of the last person$/ do
-  u = User.last
-  website = User.last.website
-  page.should have_content("ID #{website.id}")
+  page.should have_content("ID #{User.last.website.id}")
 end

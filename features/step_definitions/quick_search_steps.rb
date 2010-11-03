@@ -1,6 +1,6 @@
 Then /^verify that user is John Smith$/ do
   selects =  page.find(:xpath, "//table[@id='view_table']")
-  assert selects
+  selects.should be_true
 
   selects.find(:xpath, './tr/td[2]').text.should match Regexp.new('John')
   selects.find(:xpath, './tr/td[3]').text.should match Regexp.new('Smith')
