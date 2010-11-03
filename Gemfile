@@ -10,7 +10,6 @@ gem 'capistrano'
 
 gem 'faker'
 
-
 gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git', :branch => 'rails3_gem'
 
 group :development, :test do
