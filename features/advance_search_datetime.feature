@@ -89,3 +89,13 @@ Feature: Advance Search datetime
     Then I should see "Search result: 1 record found"
     Then async verify that user "first_name" is "Mary"
     Then async verify that user "last_name" is "Jane"
+
+  @javascript
+  Scenario: invalid integer value
+    Given I visit advance_search page
+    When I select "born_at" from "adv_search[1_row][col1]"
+    When I select "on" from "adv_search[1_row][col2]"
+    When I fill in "adv_search[1_row][col3]" with "xyz"
+    When I press "Search"
+    Then async I should see "xyz is not a valid date"
+

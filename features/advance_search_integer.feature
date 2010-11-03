@@ -59,3 +59,12 @@ Feature: Advance Search for integer
     Then async verify that user "first_name" is "John"
     Then async verify that user "last_name" is "Smith"
 
+  @javascript
+  Scenario: invalid integer value
+    Given I visit advance_search page
+    When I select "age" from "adv_search[1_row][col1]"
+    When I select "is greater than" from "adv_search[1_row][col2]"
+    When I fill in "adv_search[1_row][col3]" with "xyz"
+    When I press "Search"
+    Then async I should see "xyz is not a valid integer"
+
