@@ -50,7 +50,7 @@ Feature: Advance Search datetime
     Given the following user exists:
       | first name | last name | born_at          |
       | Mary       | Jane      | 03-November-2010 |
-      | John       | Smith     | 04-November-2010 |
+      | John       | Smith     | 14-November-2010 |
     Given I visit advance_search page
     When I select "born_at" from "adv_search[1_row][col1]"
     When I select "on" from "adv_search[1_row][col2]"
@@ -65,11 +65,11 @@ Feature: Advance Search datetime
     Given the following user exists:
       | first name | last name | born_at          |
       | Mary       | Jane      | 03-November-2010 |
-      | John       | Smith     | 05-November-2010 |
+      | John       | Smith     | 14-November-2010 |
     Given I visit advance_search page
     When I select "born_at" from "adv_search[1_row][col1]"
     When I select "on or after" from "adv_search[1_row][col2]"
-    When I fill in "adv_search[1_row][col3]" with "04-November-2010"
+    When I fill in "adv_search[1_row][col3]" with "05-November-2010"
     When I press "Search"
     Then I should see "Search result: 1 record found"
     Then async verify that user "first_name" is "John"
@@ -80,11 +80,11 @@ Feature: Advance Search datetime
     Given the following user exists:
       | first name | last name | born_at          |
       | Mary       | Jane      | 03-November-2010 |
-      | John       | Smith     | 05-November-2010 |
+      | John       | Smith     | 14-November-2010 |
     Given I visit advance_search page
     When I select "born_at" from "adv_search[1_row][col1]"
     When I select "on or before" from "adv_search[1_row][col2]"
-    When I fill in "adv_search[1_row][col3]" with "04-November-2010"
+    When I fill in "adv_search[1_row][col3]" with "05-November-2010"
     When I press "Search"
     Then I should see "Search result: 1 record found"
     Then async verify that user "first_name" is "Mary"
