@@ -2,7 +2,6 @@
 
 
 # How do I run test?
-* mv Gemfile2 Gemfile
 * bundle install
 * rake db:create
 * rake db:migrate
