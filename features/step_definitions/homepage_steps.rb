@@ -1,7 +1,6 @@
 #TODO try to use a table like utility
 Then /^page should have link with text "(.*)" within "(.*)" and url "(.*)"$/ do |text, css_selector, url|
   id = css_selector[1..-1]
-  #page.find(:xpath, "//div[@id='#{tmp}']//a[@href='#{url}']").text.should == text
   page.should have_xpath( "//div[@id='#{id}']//a[@href='#{url}']", :text => text )
 end
 

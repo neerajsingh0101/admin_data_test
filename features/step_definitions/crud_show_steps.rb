@@ -19,7 +19,6 @@ end
 
 Then /^I should find value "(.*)" for "(.*)"$/ do |text, column|
   index = (column == 'created_at') ? 9 : 10
-  #page.find(:xpath, "//form//div[@class='data'][#{index}]").text.should match Regexp.new(text)
   page.should have_xpath( "//form//div[@class='data'][#{index}]", :text => Regexp.new(text) )
 end
 
