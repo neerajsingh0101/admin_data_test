@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/neerajdotname/admin_data.git
-  revision: dee8b863b640f83183c0f8a3b3db11433910bf7c
+  revision: 2c6a92822a0a52141e4fe2832e3021584ecde3a3
   branch: rails3_gem
   specs:
     admin_data (1.0.16)
