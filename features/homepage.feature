@@ -9,9 +9,9 @@ Feature: homepage
       | Neil       | Singh     |
       | Trisha     | Singh     |
     Given I visit admin_data page
-    Then I should see "Select a model"
+    Then I should see "Select from the drop down menu above"
     When I follow "admin_data"
-    Then I should see "Select a model"
+    Then I should see "Select from the drop down menu above"
     Then I should see page with proper dropdown values
     When I select "user" from "drop_down_klasses"
     Then first id of table should be of "Trisha"

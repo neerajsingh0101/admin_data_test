@@ -1,7 +1,8 @@
 #TODO try to use a table like utility
 Then /^page should have link with text "(.*)" within "(.*)" and url "(.*)"$/ do |text, css_selector, url|
-  tmp = css_selector[1..-1]
-  page.find(:xpath, "//div[@id='#{tmp}']//a[@href='#{url}']").text.should == text
+  id = css_selector[1..-1]
+  #page.find(:xpath, "//div[@id='#{tmp}']//a[@href='#{url}']").text.should == text
+  page.should have_xpath( "//div[@id='#{id}']//a[@href='#{url}']", :text => text )
 end
 
 #TODO try to convert it into a utility so that name and url could be passed in the feature
