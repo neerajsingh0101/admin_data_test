@@ -9,11 +9,11 @@ Then /^I should see page with proper dropdown values$/ do
   selects =  page.find(:xpath, "//select[@class='drop_down_value_klass']")
   selects.should be_true
 
-  selects.find(:xpath, './option[2]').text.should == 'phone_number'
+  selects.find(:xpath, './option[2]', :text => 'phone_number')
 
-  selects.find(:xpath, './option[3]').text.should == 'user'
+  selects.find(:xpath, './option[3]', :text => 'user')
 
-  selects.find(:xpath, './option[4]').text.should == 'website'
+  selects.find(:xpath, './option[4]', :text => 'website')
 
   url = '/admin_data/quick_search/'
   selects.find(:xpath, './option[2]').value.should match Regexp.new(url+'phone_number')
