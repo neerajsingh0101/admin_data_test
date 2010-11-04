@@ -13,8 +13,6 @@ Then /^(.*)verify that user "(.*)" is "(.*)"$/ do |async, attribute, input|
   end
 end
 
-
-
 Then /^I should see following tabular attributes:$/ do |expected_cukes_table|
   expected_cukes_table.diff!(tableish('table.table tr', 'td,th'))
 end

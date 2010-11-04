@@ -1,8 +1,10 @@
+#TODO try to use a table like utility
 Then /^page should have link with text "(.*)" within "(.*)" and url "(.*)"$/ do |text, css_selector, url|
   tmp = css_selector[1..-1]
   page.find(:xpath, "//div[@id='#{tmp}']//a[@href='#{url}']").text.should == text
 end
 
+#TODO try to convert it into a utility so that name and url could be passed in the feature
 Then /^I should see page with proper dropdown values$/ do
   selects =  page.find(:xpath, "//select[@class='drop_down_value_klass']")
   selects.should be_true

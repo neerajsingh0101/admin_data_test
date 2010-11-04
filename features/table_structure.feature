@@ -16,4 +16,3 @@ Feature: table structure
      | born_at     | datetime | true  |         | 
      | created_at  | datetime | true  |         | 
      | updated_at  | datetime | true  |         | 
-

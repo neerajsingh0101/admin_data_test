@@ -49,7 +49,6 @@ Feature: Advance Search for integer
       | first name | last name | age |
       | Mary       | Jane      | 30  |
       | John       | Smith     | 40  |
-    Given last user's age is nil
     Given I visit advance_search page
     When I select "age" from "adv_search[1_row][col1]"
     When I select "is greater than" from "adv_search[1_row][col2]"

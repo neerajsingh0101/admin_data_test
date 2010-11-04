@@ -7,7 +7,6 @@ Then /^page should have disabled css "(.*)"$/ do |css_selector|
   elem['disabled'].should == 'true'
 end
 
-
 When /^I visit (.*) page$/ do |target_page|
   case target_page
   when 'admin_data'
