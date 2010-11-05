@@ -1,9 +1,28 @@
-#TODO try to use a table like utility
-Then /^page should have link with text "(.*)" within "(.*)" and url "(.*)"$/ do |text, css_selector, url|
-  id = css_selector[1..-1]
-  page.should have_xpath( "//div[@id='#{id}']//a[@href='#{url}']", :text => text )
+def handy_has_links(table)
+  table.hashes.each do |h|
+    css_selector = h[:within]
+    selector = css_selector[1..-1]
+    page.should have_xpath( "//div[@id='#{selector}']//a[@href='#{h[:url]}']", :text => h[:text] )
+  end
 end
 
+Then /^page should have following links?:$/ do |table|
+  handy_has_links(table)
+end
+
+
+# Usage :
+#
+#   position:         if the option is the very first option in the dropdown list then position should be 1.
+#   css_selector:     only class and id are supported at this time.
+#   value_match_type: If specified as "regex" then Regular expression will be used to detect the match.
+#
+#    Then I should see dropdown with css_selector ".drop_down_value_klass" with following options:
+#      | text         | value                                 | position | value_match_type |
+#      | phone_number | /admin_data/quick_search/phone_number | 2        | regex            |
+#      | user         | /admin_data/quick_search/user         | 3        | regex            |
+#      | website      | /admin_data/quick_search/website      | 4        | regex            |
+#
 def handy_has_select?(css_selector, select_options)
   selector = css_selector[1..-1]
   case css_selector[0,1]

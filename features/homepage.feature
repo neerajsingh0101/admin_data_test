@@ -29,6 +29,8 @@ Feature: homepage
 
   Scenario: footer links
     Given I visit admin_data page
-    Then page should have link with text "admin_data" within "#footer" and url "http://github.com/neerajdotname/admin_data"
-    Then page should have link with text "Report Bug" within "#footer" and url "http://github.com/neerajdotname/admin_data/issues"
-    Then page should have link with text "Documentation" within "#footer" and url "http://github.com/neerajdotname/admin_data/wiki"
+    Then page should have following links:
+      | url                                                | text          | within  |
+      | http://github.com/neerajdotname/admin_data         | admin_data    | #footer |
+      | http://github.com/neerajdotname/admin_data/issues  | Report Bug    | #footer |
+      | http://github.com/neerajdotname/admin_data/wiki    | Documentation | #footer |
