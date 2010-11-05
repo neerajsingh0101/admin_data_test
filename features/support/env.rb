@@ -64,5 +64,5 @@ Dir[Rails.root.join('test', 'factories', '*.rb')].each {|f| require f}
 require 'factory_girl/step_definitions'
 require 'shoulda'
 
-Capybara.save_and_open_page_path = 'tmp'
+#Capybara.save_and_open_page_path = 'tmp'
 #Capybara.default_wait_time = 40 

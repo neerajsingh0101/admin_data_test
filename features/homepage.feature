@@ -12,8 +12,13 @@ Feature: homepage
     Then I should see "Select from the drop down menu above"
     When I follow "admin_data"
     Then I should see "Select from the drop down menu above"
-    Then I should see page with proper dropdown values
+    Then I should see dropdown with css_selector ".drop_down_value_klass" with following options:
+      | text         | value                                 | position |
+      | phone_number | /admin_data/quick_search/phone_number | 2        |
+      | user         | /admin_data/quick_search/user         | 3        |
+      | website      | /admin_data/quick_search/website      | 4        |
     When I select "user" from "drop_down_klasses"
+    Then show me the page
     Then first id of table should be of "Trisha"
 
   Scenario: footer links

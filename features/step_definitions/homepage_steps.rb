@@ -14,17 +14,8 @@ def handy_select(css_selector, select_options)
   end
 end
 
-#TODO try to convert it into a utility so that name and url could be passed in the feature
-Then /^I should see page with proper dropdown values$/ do
-  css_selector = 'drop_down_value_klass'
-  url = '/admin_data/quick_search/'
-
-  select_options = []
-  select_options << {:position => 2, :text => 'phone_number', :value => "#{url}phone_number"}
-  select_options << {:position => 3, :text => 'user', :value => "#{url}user"}
-  select_options << {:position => 4, :text => 'website', :value => "#{url}website"}
-
-  handy_select(css_selector, select_options)
+Then /^I should see dropdown with css_selector ".(.*)" with following options:$/ do |css_selector, table|
+  handy_select(css_selector, table.hashes)
 end
 
 
