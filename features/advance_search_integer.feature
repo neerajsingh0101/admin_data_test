@@ -17,8 +17,8 @@ Feature: Advance Search for integer
   Scenario: option "is equal to"
     Given the following user exists:
       | first name | last name | age |
-      | Mary       | Jane      | 30  |
       | John       | Smith     | 40  |
+      | Mary       | Jane      | 30  |
     Given I visit advance_search page
     When I select "age" from "adv_search[1_row][col1]"
     When I select "is equal to" from "adv_search[1_row][col2]"
@@ -47,8 +47,8 @@ Feature: Advance Search for integer
   Scenario: option "is greater than"
     Given the following user exists:
       | first name | last name | age |
-      | Mary       | Jane      | 30  |
       | John       | Smith     | 40  |
+      | Mary       | Jane      | 30  |
     Given I visit advance_search page
     When I select "age" from "adv_search[1_row][col1]"
     When I select "is greater than" from "adv_search[1_row][col2]"

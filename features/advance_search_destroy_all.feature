@@ -4,9 +4,9 @@ Feature: Advance search destroy all
   Scenario: destroy all
     Given the following user exists:
       | first name | last name |
+      | John       | Smith     |
       | Mary       | Jane      |
       | Jennifer   | Jane      |
-      | John       | Smith     |
     Given I visit advance_search page
     When I select "first_name" from "adv_search[1_row][col1]"
     When I select "is exactly" from "adv_search[1_row][col2]"

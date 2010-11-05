@@ -21,8 +21,8 @@ Feature: Advance Search datetime
   Scenario: option "is null"
     Given the following user exists:
       | first name | last name | born_at          |
-      | Mary       | Jane      | 03-November-2010 |
       | John       | Smith     |                  |
+      | Mary       | Jane      | 03-November-2010 |
     Given I visit advance_search page
     When I select "born_at" from "adv_search[1_row][col1]"
     When I select "is null" from "adv_search[1_row][col2]"
@@ -64,8 +64,8 @@ Feature: Advance Search datetime
   Scenario: option "on or after"
     Given the following user exists:
       | first name | last name | born_at          |
-      | Mary       | Jane      | 03-November-2010 |
       | John       | Smith     | 14-November-2010 |
+      | Mary       | Jane      | 03-November-2010 |
     Given I visit advance_search page
     When I select "born_at" from "adv_search[1_row][col1]"
     When I select "on or after" from "adv_search[1_row][col2]"

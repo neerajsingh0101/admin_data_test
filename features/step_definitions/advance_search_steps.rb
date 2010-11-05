@@ -20,3 +20,17 @@ Then /^asyc I should see "(.*)"$/ do |text|
 
   page.should have_content(text)
 end
+
+
+Given /^first user's value for active is nil$/ do
+  User.update_all('active = NULL', "id = #{User.first.id}")
+end
+Given /^last user's value for active is nil$/ do
+  User.update_all('active = NULL', "id = #{User.last.id}")
+end
+
+
+
+Then /^async I should see "(.*)"$/ do |msg|
+  page.should have_content(msg)
+end

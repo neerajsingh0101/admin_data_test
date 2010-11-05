@@ -19,8 +19,8 @@ Feature: Advance Search for boolean
   Scenario: option "is false"
     Given the following user exists:
       | first name | last name | active |
-      | Mary       | Jane      | true   |
       | John       | Smith     | false  |
+      | Mary       | Jane      | true   |
     Given I visit advance_search page
     When I select "active" from "adv_search[1_row][col1]"
     When I select "is false" from "adv_search[1_row][col2]"
@@ -47,9 +47,9 @@ Feature: Advance Search for boolean
   Scenario: option "is null"
     Given the following user exists:
       | first name | last name | active |
-      | Mary       | Jane      | true   |
       | John       | Smith     | false  |
-    Given last user's value for active is nil
+      | Mary       | Jane      | true   |
+    Given first user's value for active is nil
     Given I visit advance_search page
     When I select "active" from "adv_search[1_row][col1]"
     When I select "is null" from "adv_search[1_row][col2]"

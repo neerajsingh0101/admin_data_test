@@ -54,9 +54,9 @@ Feature: Advance Search for string
   Scenario: option "is null"
     Given the following user exists:
       | first name | last name |
+      | John       |           |
       | Mary       | Jane      |
       | Jennifer   | Jane      |
-      | John       |           |
     Given I visit advance_search page
     When I select "last_name" from "adv_search[1_row][col1]"
     When I select "is null" from "adv_search[1_row][col2]"
@@ -68,9 +68,9 @@ Feature: Advance Search for string
   Scenario: option "is exactly"
     Given the following user exists:
       | first name | last name |
+      | John       | Smith     |
       | Mary       | Jane      |
       | Jennifer   | Jane      |
-      | John       | Smith     |
     Given I visit advance_search page
     When I select "first_name" from "adv_search[1_row][col1]"
     When I select "is exactly" from "adv_search[1_row][col2]"
@@ -116,10 +116,10 @@ Feature: Advance Search for string
   Scenario: option "does not contain"
     Given the following user exists:
       | first name | last name |
+      | John       | Smith     |
       | Mary       | Jane      |
       | Jennifer   | Jane      |
       | Jenny      | Aniston   |
-      | John       | Smith     |
     Given I visit advance_search page
     When I select "first_name" from "adv_search[1_row][col1]"
     When I select "doesn't contain" from "adv_search[1_row][col2]"
