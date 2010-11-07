@@ -34,3 +34,12 @@ end
 Then /^async I should see "(.*)"$/ do |msg|
   page.should have_content(msg)
 end
+
+Then /^I should see only two rows in the table$/ do
+  table =  page.find(:xpath, "//table[@id='advance_search_table']")
+  table.find(:xpath, "./tbody/tr", :count => 2 )
+end
+
+Then /^page should have id "remove_row_3"$/ do
+  page.has_css?("remove_row_3")
+end
