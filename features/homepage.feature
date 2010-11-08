@@ -24,7 +24,6 @@ Feature: homepage
       | user         | /admin_data/quick_search/user         | 3        | regex            |
       | website      | /admin_data/quick_search/website      | 4        | regex            |
     When I select "user" from "drop_down_klasses"
-    Then show me the page
     Then first id of table should be of "Trisha"
 
   Scenario: footer links
