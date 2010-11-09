@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/neerajdotname/admin_data.git
-  revision: 42acffa16a2b71e67ef9f35408744db87c21ebc3
-  branch: rails3_gem
+  revision: 078190245218d61eb0745c9b70198c0574c9bb92
   specs:
     admin_data (1.0.18)
       will_paginate (>= 3.0.pre2)
