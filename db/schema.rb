@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091030202603) do
+ActiveRecord::Schema.define(:version => 20091030202259) do
+
+  create_table "clubs", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "clubs_users", :id => false, :force => true do |t|
+    t.integer "user_id", :null => false
+    t.integer "club_id", :null => false
+  end
 
   create_table "phone_numbers", :force => true do |t|
     t.string   "number"

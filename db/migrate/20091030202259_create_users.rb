@@ -11,6 +11,29 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    create_table :phone_numbers do |t|
+      t.string :number
+      t.integer :user_id
+
+      t.timestamps
+    end
+
+    create_table :websites do |t|
+      t.string :url
+      t.integer :user_id
+
+      t.timestamps
+    end
+
+    create_table :clubs do |t|
+      t.string :name
+    end
+    create_table :clubs_users, :id => false do |t|
+      t.integer :user_id, :null => false
+      t.integer :club_id, :null => false
+    end
+
   end
 
   def self.down

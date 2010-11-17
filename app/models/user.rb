@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
 
   serialize :data
 
-  has_many :phone_numbers
-  has_one :website
+  has_many :phone_numbers, :dependent => :destroy
+  has_and_belongs_to_many :clubs
+  has_one :website, :dependent => :destroy
 
   validates_presence_of :first_name, :age
   validates_numericality_of :age
