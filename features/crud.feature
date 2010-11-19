@@ -5,8 +5,8 @@ Feature: CRUD
     Given I visit user show page
     Given I follow "Edit"
     When I fill in the following:
-      | user_first_name |  |
-      | user_age        |  |
+      | user_first_name ||
+      | user_age        ||
     When I press "Update"
     Then I should see "First name can't be blank"
     Then I should see "Age can't be blank"

@@ -25,3 +25,6 @@ When /^I visit (.*) page$/ do |target_page|
     visit "/admin_data/feed/user"
   end
 end
+
+#TODO add test for delete a record
+## TODO add test for destroy a record

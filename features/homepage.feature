@@ -10,7 +10,7 @@ Feature: homepage
       | Trisha     | Singh     |
     Given I visit admin_data page
     Then I should see "Select from the drop down menu above"
-    When I follow "admin_data"
+    When I follow "admin_data" within "#subnav"
     Then I should see "Select from the drop down menu above"
     Then I should see dropdown with css_selector ".drop_down_value_klass" with following options:
       | text         | value                                 | position | value_match_type |
