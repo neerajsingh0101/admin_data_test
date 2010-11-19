@@ -13,3 +13,8 @@ Factory.define :phone_number do |f|
   f.number '123-456-7890'
   f.association :user
 end
+
+Factory.define :club do |f|
+  f.name 'sun-shine club'
+  f.association :user
+end

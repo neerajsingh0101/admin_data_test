@@ -29,3 +29,9 @@ end
 Then /^I should notice id of website of the last person$/ do
   page.should have_content("ID #{User.last.website.id}")
 end
+
+Given /^user owns two clubs "sun-shine" and "rise-n-shine"$/ do
+  u = User.last
+  u.clubs.create(:name => 'sun-shine')
+  u.clubs.create(:name => 'rise-n-shine')
+end

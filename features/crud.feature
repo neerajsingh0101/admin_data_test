@@ -1,34 +1,5 @@
 Feature: CRUD
 
-  Scenario: show
-    Given a user exists
-    Given I visit user show page
-    Then I should notice id of the last person
-    Then I should see "Edit"
-    Then I should see "Delete"
-    Then I should see "Destroy"
-    Then I should see crud show tabular attributes
-
-  Scenario: show with association info
-    Given the following user exists:
-      | first name | last name |
-      | Mary       | Jane      |
-    Given the following website exists:
-      | url             | user            |
-      | www.google.com  | first name:Mary |
-    Given the following phone number exists:
-      | number        | user            |
-      | 123-456-7890  | first name:Mary |
-      | 123-456-7899  | first name:Mary |
-    Given I visit user show page
-    Then I should see "website"
-    Then I should see "phone_numbers(2)"
-    When I follow "website"
-    Then I should notice id of website of the last person
-    When I follow "user"
-    When I follow "phone_numbers(2)"
-    Then I should see "has 2 phone_numbers"
-
   Scenario: edit
     Given a user exists
     Given I visit user show page
