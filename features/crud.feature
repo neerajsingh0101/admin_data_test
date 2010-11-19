@@ -15,7 +15,7 @@ Feature: CRUD
     Then I should find value "(auto)" for "updated_at"
     When I fill in the following:
       | user_first_name | Robert2 |
-      | user_age        | 99 |
+      | user_age        | 99      |
     When I press "Update"
     Then I should see "Robert2"
     Then I should see "99"
