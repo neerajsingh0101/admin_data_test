@@ -2,6 +2,7 @@ Factory.define :user do |f|
   f.first_name 'Mary'
   f.last_name 'Jane'
   f.age 21
+  f.born_at {Time.parse('August 31 2010')}
 end
 
 Factory.define :website do |f|

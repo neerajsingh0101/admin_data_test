@@ -14,7 +14,7 @@ Then /^I should see crud show tabular attributes$/ do
   data[12].should == "description"
   data[13].should == ""
   data[14].should == "born_at"
-  data[15].should == ""
+  data[15].should =~ /30-August-2010/
 end
 
 Then /^I should find value "(.*)" for "(.*)"$/ do |text, column|
