@@ -8,8 +8,9 @@ gem 'ruby-debug'
 
 gem 'faker'
 
-gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git'
+#gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git'
 #gem 'admin_data', :path => '/Users/nsingh/dev/admin_data'
+gem "admin_data", ">=1.1.3"
 
 group :development, :test do
   gem 'factory_girl_rails'
@@ -18,6 +19,6 @@ group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
   gem "cucumber-rails", ">= 0.3.2"
   gem "capybara", "= 0.4.0"
-  gem "launchy"
+  gem "launchy", ">= 0.3.7"
 end
 
