@@ -4,21 +4,13 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem 'ruby-debug'
-
 gem 'faker'
 
 #gem 'admin_data', :git => 'git://github.com/neerajdotname/admin_data.git'
 #gem 'admin_data', :path => '/Users/nsingh/dev/admin_data'
-gem "admin_data", ">=1.1.3"
+gem "admin_data", ">=1.1.4"
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'shoulda'
-  gem "rspec-rails", ">= 2.0.1"
-  gem "cucumber-rails", ">= 0.3.2"
-  gem "capybara", "= 0.4.0"
-  gem "launchy", ">= 0.3.7"
+  gem 'ruby-debug'
 end
 
