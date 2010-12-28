@@ -23,3 +23,19 @@ production:
 
 cucumber:
   <<: *test
+
+
+#defaults: &defaults
+  #adapter: postgresql
+  #username: nsingh
+  #password: postgres
+  #encoding: unicode
+  #pool: 5
+#development:
+  #<<: *defaults
+  #database: admin_data_test_dev
+#test:
+  #<<: *defaults
+  #database: admin_data_test_test
+#production:
+  #database: admin_data_test_production
